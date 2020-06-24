@@ -35,7 +35,7 @@ export default {
           designation: "Software Engineer",
           hide: true,
           location: "Bangalore, India",
-          brief: "As a Full stack developer, I am part of a team that handles dollar making part - Cart & Checkout @lowes.com & @lowesforpors.com"
+          brief: "As a Full stack developer, I am part of a team that handles dollar making part of a ecommerce website - Cart & Checkout @lowes.com & @lowesforpors.com"
         },
         {
           year: "2017 - 2020",
