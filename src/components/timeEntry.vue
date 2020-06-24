@@ -1,7 +1,10 @@
 <template>
-  <div class="entry animated delay-1s" :class="{'fadeInLeft':left, 'fadeInRight':!left, 'hide': hide}">
+  <div
+    class="entry animated delay-1s"
+    :class="{'fadeInLeft':left, 'fadeInRight':!left, 'hide': hide}"
+  >
     <div class="box">
-      <article class="media">
+      <div class="media">
         <div class="media-left">
           <div class="content">
             <div class="year">{{year}}</div>
@@ -17,11 +20,12 @@
                 <div class="designation">{{designation}}</div>
               </small>
               <small>{{location}}</small>
-              <br />{{brief}}
+              <br />
+              <span class="has-text-justified mt-3">{{brief}}</span>
             </p>
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +47,17 @@ export default {
   visibility: hidden;
 }
 .media {
-    align-items: center !important;
+  align-items: center !important;
+}
+@media (max-width: 1024px) {
+  .media {
+    flex-direction: column;
+  }
+  .media-content {
+    text-align: center;
+  }
+  .media-left {
+    margin-right: 0;
+  }
 }
 </style>

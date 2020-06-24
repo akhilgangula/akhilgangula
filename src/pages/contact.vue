@@ -2,10 +2,10 @@
   <div class="contact" id="contact">
     <section-header>Contact</section-header>
     <div class="wrapper">
-      <p>You have a project ?</p>
+      <p>You have a project in mind?</p>
       <p>
         I would be happy to
-        <a>discuss it</a>
+        <a href="mailto:akhilreddy.gangula@gmail.com">discuss it</a>
       </p>
       <p>with you.</p>
     </div>
