@@ -6,6 +6,7 @@
         <div class="nav-item is-inline is-hidden-mobile" v-scroll-to="'#creation'">creation</div>
         <div class="nav-item is-inline is-hidden-mobile" v-scroll-to="'#career'">career</div>
         <div class="nav-item is-inline is-hidden-mobile" v-scroll-to="'#contact'">contact</div>
+        <div class="nav-item is-inline is-hidden-mobile"><router-link to="/resume">Resumé</router-link></div>
     </div>
 </template>
 <style scoped>
@@ -13,7 +14,7 @@
   writing-mode: vertical-lr;
   margin-left: 20px;
   position: fixed;
-  top: 30%;
+  top: 20%;
   cursor: pointer;
 }
 
@@ -37,3 +38,12 @@
 }
 
 </style>
+<script>
+export default {
+    methods: {
+        resume: function() {
+            window.location = ""
+        }
+    }
+}
+</script>

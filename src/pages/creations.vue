@@ -15,19 +15,13 @@
           The image of the company no longer corresponded to that of its beginnings,
           RA Engineers had become a recognized reference in its manufacturing sector.
           It was time for her to
-          <span
-            class="has-text-black has-text-weight-bold"
-          >open up to new opportunities</span> like imports and exports, especially with large account customers.
+          <b>open up to new opportunities</b> like imports and exports, especially with large account customers.
           <br />
           <br />His new identity should therefore not only reflect his
-          <span
-            class="has-text-black has-text-weight-bold"
-          >level of excellence</span>
+          <b>level of excellence</b>
           but also his diverse expertise.
           His image had to translate to his strength while being
-          <span
-            class="has-text-black has-text-weight-bold"
-          >modern and elegant</span>.
+          <b>modern and elegant</b>.
         </template>
       </project>
 
@@ -39,10 +33,27 @@
       >
         <template v-slot:content-header>Order management system for purchasing materials.</template>
         <template v-slot:content-body>
-          <span class="has-text-black has-text-weight-bold">Automated</span> Order Management System is a software eco-system that facilitates and
-          <span class="has-text-black has-text-weight-bold">manages</span> the execution of trade orders.
+          <b>Automated</b> Order Management System is a software eco-system that facilitates and
+          <b>manages</b> the execution of trade orders.
           Clients can place an order in a trading system to
-          <span class="has-text-black has-text-weight-bold">execute</span> a buy order for an item.
+          <b>execute</b> a buy order for an item.
+        </template>
+      </project>
+
+      <project
+        project="MJR"
+        counter="003"
+        :highlights="['Mocking Framework', 'Flexible', 'Simple setup', 'Open Source']"
+        :tech="['Node JS', 'Express JS']"
+      >
+        <template v-slot:content-header>A REST service mocking framework.</template>
+        <template v-slot:content-body>
+          A
+          <b>flexible</b> Node JS framework running Express JS, which would help in
+          <b>mocking</b> the web services with
+          <b>REST protocol</b>.
+          Making application modules truly
+          <b>independent</b> during development phase.
         </template>
       </project>
     </div>

@@ -1,37 +1,13 @@
 <template>
   <div id="app">
-    <nav-bar />
-    <div class="page">
-      <hero />
-      <about />
-      <expertise />
-      <creations/>
-      <timeline/>
-      <contact/>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hero from "@/pages/Hero.vue";
-import About from "@/pages/about.vue";
-import Expertise from "@/pages/expertise.vue";
-import Creations from "@/pages/creations.vue";
-import Timeline from "@/pages/career.vue";
-import Contact from "@/pages/contact.vue";
-import navBar from "@/components/navBar";
 import "bulma/css/bulma.css";
 export default {
-  name: "App",
-  components: {
-    Hero,
-    navBar,
-    About,
-    Expertise,
-    Contact,
-    Creations,
-    Timeline
-  }
+  name: "App"
 };
 </script>
 

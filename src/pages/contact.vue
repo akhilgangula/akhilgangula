@@ -5,7 +5,7 @@
       <p>You have a project in mind?</p>
       <p>
         I would be happy to
-        <a href="mailto:akhilreddy.gangula@gmail.com">discuss it</a>
+        <a href="mailto:akhilreddy.gangula96@gmail.com">discuss it</a>
       </p>
       <p>with you.</p>
     </div>
@@ -13,7 +13,7 @@
       <line-animation />
       <div class="social-media">
         <nav class="level is-mobile">
-          <div class="level-item has-text-centered ">
+          <div class="level-item has-text-centered">
             <div>
               <p class="heading is-size-6 is-capitalized">In</p>
             </div>
@@ -25,12 +25,17 @@
           </div>
           <div class="level-item has-text-centered">
             <div>
-              <p class="heading is-size-6 is-capitalized">fb</p>
+              <p class="heading is-size-6 is-capitalized">M.</p>
             </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
               <p class="heading is-size-6 is-capitalized">Tel</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading is-size-6 is-capitalized">fb</p>
             </div>
           </div>
         </nav>
@@ -83,9 +88,9 @@ a:hover {
 }
 
 .level {
-    margin-top: 7%;
+  margin-top: 7%;
 }
-@media (min-width: 481px) and (max-width: 1024px) { 
+@media (min-width: 481px) and (max-width: 1024px) {
   .break {
     max-width: 80%;
     margin-left: 10%;
