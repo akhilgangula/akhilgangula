@@ -10,6 +10,7 @@ Vue.config.productionTip = false;
 Vue.use(VueScrollTo, {
   duration: 500,
   easing: "ease",
+  offset: -50,
 });
 
 new Vue({

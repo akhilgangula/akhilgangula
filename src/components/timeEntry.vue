@@ -1,33 +1,15 @@
 <template>
-  <div
-    class="entry animated delay-1s"
-    :class="{'fadeInLeft':left, 'fadeInRight':!left, 'hide': hide}"
-  >
-    <div class="box">
-      <div class="media">
-        <div class="media-left">
-          <div class="content">
-            <div class="year">{{year}}</div>
-          </div>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>
-                <div class="compnay">{{company}}</div>
-              </strong>
-              <small>
-                <div class="designation">{{designation}}</div>
-              </small>
-              <small>{{location}}</small>
-              <br />
-              <span class="has-text-justified mt-3">{{brief}}</span>
-            </p>
-          </div>
-        </div>
-      </div>
+  <li class="timeline-event">
+    <label class="timeline-event-icon"></label>
+    <div class="timeline-event-copy">
+      <p class="timeline-event-thumbnail">{{year}}</p>
+      <h3>{{company}}</h3>
+      <h4>{{designation}}</h4>
+      <p>
+        <strong>{{location}}</strong><br /><slot/>
+      </p>
     </div>
-  </div>
+  </li>
 </template>
 <script>
 export default {
@@ -36,28 +18,88 @@ export default {
     company: String,
     location: String,
     designation: String,
-    hide: Boolean,
-    left: Boolean,
-    brief: String
-  }
+  },
 };
 </script>
 <style scoped>
-.hide {
-  visibility: hidden;
+.timeline-event {
+  position: relative;
 }
-.media {
-  align-items: center !important;
+
+.timeline-event:hover .timeline-event-icon {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background-color: #a83279;
 }
-@media (max-width: 1024px) {
-  .media {
-    flex-direction: column;
-  }
-  .media-content {
-    text-align: center;
-  }
-  .media-left {
-    margin-right: 0;
-  }
+
+.timeline-event:hover .timeline-event-thumbnail {
+  -moz-box-shadow: inset 40em 0 0 0 #a83279;
+  -webkit-box-shadow: inset 40em 0 0 0 #a83279;
+  box-shadow: inset 40em 0 0 0 #a83279;
+}
+
+.timeline-event-copy {
+  padding: 2em;
+  position: relative;
+  top: -1.875em;
+  left: 4em;
+  width: 80%;
+}
+
+.timeline-event-copy h3 {
+  font-size: 1.75em;
+}
+
+.timeline-event-copy h4 {
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.timeline-event-copy strong {
+  font-weight: 700;
+}
+
+.timeline-event-copy p:not(.timeline-event-thumbnail) {
+  padding-bottom: 1.2em;
+}
+
+.timeline-event-icon {
+  -moz-transition: -moz-transform 0.2s ease-in;
+  -o-transition: -o-transform 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: black;
+  outline: 10px solid white;
+  display: block;
+  margin: 0.5em 0.5em 0.5em -0.5em;
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 1em;
+  height: 1em;
+}
+
+.timeline-event-thumbnail {
+  -moz-transition: box-shadow 0.5s ease-in 0.1s;
+  -o-transition: box-shadow 0.5s ease-in 0.1s;
+  -webkit-transition: box-shadow 0.5s ease-in;
+  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition: box-shadow 0s ease-in 0.1s;
+  color: white;
+  font-size: 0.75em;
+  background-color: black;
+  -moz-box-shadow: inset 0 0 0 0em #ef795a;
+  -webkit-box-shadow: inset 0 0 0 0em #ef795a;
+  box-shadow: inset 0 0 0 0em #ef795a;
+  display: inline-block;
+  margin-bottom: 1.2em;
+  padding: 0.25em 1em 0.2em 1em;
 }
 </style>

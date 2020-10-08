@@ -6,7 +6,7 @@
         <div class="nav-item is-inline is-hidden-mobile" v-scroll-to="'#creation'">creation</div>
         <div class="nav-item is-inline is-hidden-mobile" v-scroll-to="'#career'">career</div>
         <div class="nav-item is-inline is-hidden-mobile" v-scroll-to="'#contact'">contact</div>
-        <div class="nav-item is-inline is-hidden-mobile"><router-link to="/resume">Resumé</router-link></div>
+        <!-- <div class="nav-item is-inline is-hidden-mobile"><router-link to="/resume">Resumé</router-link></div> -->
     </div>
 </template>
 <style scoped>

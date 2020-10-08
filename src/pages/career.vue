@@ -1,24 +1,54 @@
 <template>
-  <div class="wrapper" id="career"
-      v-observe-visibility="{callback: (visible, entry)=>visibilityChanged(visible, entry, 'head'), once:true,}"
+  <div
+    class="wrapper"
+    id="career"
+    v-observe-visibility="{
+      callback: (visible, entry) => visibilityChanged(visible, entry, 'head'),
+      once: true,
+    }"
   >
-    <section-header
-    >Career</section-header>
-    <div class="career-timeline">
-      <div class="timeline">
-        <time-entry
-          v-for="(entry, index) in entries"
-          :key="index"
-          :year="entry.year"
-          :company="entry.company"
-          :designation="entry.designation"
-          :brief="entry.brief"
-          :location="entry.location"
-          v-observe-visibility="{callback: (visible, entry)=>visibilityChanged(visible, entry, index), once:true}"
-          :hide="entry.hide"
-          :left="index%2 == 0"
-        />
-      </div>
+    <section-header>Career</section-header>
+    <div v-observe-visibility="{ callback: startTimeline, once: true }">
+      <ul class="timeline" :class="{ hide: !isVisible }">
+        <timeEntry
+          year="Jan 2020 - Now"
+          company="Lowe's Services India Pvt. Ltd."
+          designation="Software Engineer"
+          location="Bangalore, India"
+        >
+          Migration of Cart and Checkout of lowes.com to React server-side
+          rendering framework providing both with first in class user experience
+          and smooth maintaince. Gained experience in Web-development, cloud
+          Management, netwroking and mostly how to build a robust application
+          that scales up.
+        </timeEntry>
+        <timeEntry
+          year="May 2017 - Dec 2019"
+          company="Factset Research Systems"
+          designation="Software Engineer"
+          location="Hyderabad, India"
+        >
+          Maintaining an Execution Management System, a trusted way trader with
+          Exchange, other investing brokers, connecting banks, supporting a high
+          rate of 100 quotes per second with help of multi-threading system.
+          With the Power of AI, suggesting strategies for traders. Application
+          mostly covered in Java. Had a first touch of Complete software
+          engineering right from requirments, design, planning, developing,
+          testing, release. With multi-dimensional client maintianing different
+          flavours of the product.
+        </timeEntry>
+        <timeEntry
+          year="Jan 2017 - Mar 2017"
+          company="Portware"
+          designation="Intern"
+          location="Hyderabad, India"
+        >
+          Deep dive into the financial markets of Equity and For-ex. How the
+          technolgy plays a pivotal role in fueling the fast growing markets.
+          Maintaining transperency and Automating it with strategies to get the
+          optimal profit.
+        </timeEntry>
+      </ul>
     </div>
   </div>
 </template>
@@ -26,34 +56,9 @@
 import sectionHeader from "@/components/sectionHeader";
 import timeEntry from "@/components/timeEntry";
 export default {
-  data: function() {
+  data: function () {
     return {
-      entries: [
-        {
-          year: "2020 - Present",
-          company: "Lowe's India",
-          designation: "Software Engineer",
-          hide: true,
-          location: "Bangalore, India",
-          brief: "As a Full stack developer, I am part of a team that handles dollar making part of a ecommerce website - Cart & Checkout @lowes.com & @lowesforpors.com"
-        },
-        {
-          year: "2017 - 2020",
-          company: "Factset Research Systems",
-          designation: "Software Engineer",
-          hide: true,
-          location: "Hyderabad, India",
-          brief: "In this position, I worked on an Execution management system, which will empower traders to trade the tickers at optimal performance."
-        },
-        {
-          year: "Jan 2017 - Mar 2017",
-          company: "Portware India LLC",
-          designation: "Intern",
-          hide: true,
-          location: "Hyderabad, India",
-          brief: "As an intern, I performed fundational steps to immerse myself into financial domain"
-        }
-      ]
+      isVisible: false,
     };
   },
   components: {
@@ -61,7 +66,7 @@ export default {
     timeEntry,
   },
   methods: {
-    visibilityChanged: function(visible, entry, index) {
+    visibilityChanged: function (visible, entry, index) {
       if (!visible) return;
       console.log(visible, entry, index);
       if (index === "head") {
@@ -69,32 +74,53 @@ export default {
       } else if (this.entries[index + 1]) {
         this.entries[index + 1].hide = false;
       }
-    }
-  }
+    },
+    startTimeline(isVisible) {
+      this.isVisible = isVisible;
+    },
+  },
 };
 </script>
 <style scoped>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+.hide {
+  display: none;
+}
+
 .wrapper {
+  margin-top: 40%;
   max-width: 90%;
-  margin-top: 15%;
 }
-.career-timeline {
-  margin-left: 20%;
-}
+
 .timeline {
-  margin-top: 10%;
-  padding-left: 7%;
+  margin: 4em auto;
+  position: relative;
+  max-width: 46em;
+}
+
+.timeline:before {
+  background-color: black;
+  content: "";
+  margin-left: -1px;
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 2px;
+  height: 1;
   -webkit-animation: increase 3s;
   -moz-animation: increase 3s;
   -o-animation: increase 3s;
   animation: increase 3s;
+  animation-fill-mode: forwards;
 }
-.entry {
-  margin-top: 10%;
-}
-@media (max-width: 1024px) { 
-  .career-timeline {
-    margin-left: 0;
+
+@keyframes increase {
+  from {
+    height: 0;
+  }
+  
+  100% {
+    height: 100%;
   }
 }
 </style>
