@@ -15,27 +15,27 @@
         <nav class="level is-mobile">
           <div class="level-item has-text-centered">
             <div>
-              <p class="heading is-size-6 is-capitalized">In</p>
+              <a class="heading is-size-6 is-capitalized" href="https://www.linkedin.com/in/akhil-reddy-gangula/">In</a>
             </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
-              <p class="heading is-size-6 is-capitalized">Git</p>
+              <a class="heading is-size-6 is-capitalized" href="https://github.com/akhilgangula">Git</a>
             </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
-              <p class="heading is-size-6 is-capitalized">M.</p>
+              <a class="heading is-size-6 is-capitalized" href="https://medium.com/@akhilreddy.gangula96">M.</a>
             </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
-              <p class="heading is-size-6 is-capitalized">Tel</p>
+              <a class="heading is-size-6 is-capitalized" href="https://t.me/Akhil_Reddy_Gangula">Tel</a>
             </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
-              <p class="heading is-size-6 is-capitalized">fb</p>
+              <a class="heading is-size-6 is-capitalized" href="https://www.facebook.com/akhil.reddy.7330/">fb</a>
             </div>
           </div>
         </nav>

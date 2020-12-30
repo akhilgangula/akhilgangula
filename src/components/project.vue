@@ -14,21 +14,26 @@
         <div class="is-size-4">Technologies used</div>
         <li v-for="entry in tech" :key="entry">{{entry}}</li>
       </div>
+      <div class="link">
+          <explore :location="location" />
+      </div>
     </div>
   </div>
 </template>
 <script>
 import projectCounter from "@/components/projectCounter.vue";
-
+import explore from "@/components/explore.vue";
 export default {
   components: {
-    projectCounter
+    projectCounter,
+    explore
   },
   props: {
     counter: String,
     project: String,
     highlights: Array,
-    tech: Array
+    tech: Array,
+    location: String
   }
 };
 </script>
